@@ -1,7 +1,5 @@
-// ===== FULL CODE (with line-by-line comments) =====
 import gsap from "gsap";
 import { useEffect } from "react";
-// Import plugins from their dedicated paths (recommended with GSAP 3.13+)
 import ScrollSmoother from "gsap/ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
