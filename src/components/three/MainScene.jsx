@@ -1,6 +1,6 @@
+import { gsap } from "@/lib/gsapSetup"; // <-- use setup
 import { useGSAP } from "@gsap/react";
 import { Float, useGLTF } from "@react-three/drei";
-import gsap from "gsap";
 import { useRef } from "react";
 
 const MainScene = () => {

@@ -1,6 +1,5 @@
+import { gsap, SplitText } from "@/lib/gsapSetup";
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { SplitText } from "gsap/all";
 import CircularText from "./CircularText";
 
 const Hero = () => {
@@ -13,7 +12,7 @@ const Hero = () => {
       .timeline({
         scrollTrigger: {
           trigger: ".test-slide",
-          start: "1% top",
+          start: "2% top",
           end: "bottom top",
           scrub: true,
           invalidateOnRefresh: true,
