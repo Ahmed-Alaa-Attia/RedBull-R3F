@@ -5,11 +5,24 @@ import CircularText from "./CircularText";
 
 const Hero = () => {
   useGSAP(() => {
-    gsap.registerPlugin(SplitText);
-
     const charSplit1 = new SplitText(".char-split1", { type: "chars" });
     const charSplit2 = new SplitText(".char-split2", { type: "chars" });
     const charSplit3 = new SplitText(".char-split3", { type: "chars" });
+
+    gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: ".test-slide",
+          start: "1% top",
+          end: "bottom top",
+          scrub: true,
+          invalidateOnRefresh: true,
+        },
+      })
+      .to(".test-slide", {
+        yPercent: 30,
+        ease: "power1.inOut",
+      });
 
     gsap.to(".text-circular", {
       rotation: 360,
@@ -48,21 +61,6 @@ const Hero = () => {
         },
         ">-=1.2"
       );
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: ".test-slide",
-          start: "1% top",
-          end: "bottom top",
-          scrub: true,
-          invalidateOnRefresh: true,
-        },
-      })
-      .to(".test-slide", {
-        yPercent: 30,
-        ease: "power1.inOut",
-      });
   });
 
   return (

@@ -1,7 +1,7 @@
 import gsap from "gsap";
-import { useEffect } from "react";
 import ScrollSmoother from "gsap/ScrollSmoother";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 import About from "./components/About";
 import Footer from "./components/Footer";
@@ -13,7 +13,7 @@ const App = () => {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    const smoother = ScrollSmoother.create({
+    ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
       smooth: 3,
@@ -21,11 +21,7 @@ const App = () => {
       effects: true,
       normalizeScroll: true,
     });
-
-    return () => {
-      smoother?.kill();
-    };
-  }, []);
+  });
 
   return (
     <>
